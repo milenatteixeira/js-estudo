@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS - Estudo</title>
-</head>
-<body>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>JS - Estudo</title>
+	</head>
+	<body>
+		<div class="main-container"></div>
+	</body>
 </html>
+
+<script>
+	const girlGroups = [
+		{
+			name: "BLACKPINK",
+			likes: 0,
+		},
+		{
+			name: "RED VELVET",
+			likes: 0,
+		},
+		{
+			name: "(G)-IDLE",
+			likes: 0,
+		},
+	];
+
+	const handleClick = (girlGroupName) => {
+		girlGroups.forEach((girlGroup) => {
+			if (girlGroupName === girlGroup.name) {
+				girlGroup.likes += 1;
+			}
+		});
+		render();
+	};
+
+	function render() {
+		const tela = document.querySelector(".main-container");
+		tela.innerHTML = girlGroups
+			.map((girlGroup) => {
+				return `<button onclick = "handleClick('${girlGroup.name}')">
+                        <span>${girlGroup.name}</span>
+                        <span>${girlGroup.likes} likes</span>
+		            </button>`;
+			})
+			.join("");
+	}
+
+	render();
+</script>

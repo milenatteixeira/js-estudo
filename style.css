@@ -1,0 +1,21 @@
+*{
+    font-size: x-large;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container button{
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+.main-container button :nth-child(1){
+    float: left;
+}
+.main-container button :nth-child(2){
+    float: right;
+}
